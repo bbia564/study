@@ -5,7 +5,6 @@ import 'package:study_work/main.dart';
 import 'package:study_work/pages/study_second/all/all_view.dart';
 import 'package:study_work/pages/study_second/study/study_view.dart';
 import 'package:study_work/pages/study_second/work/work_view.dart';
-import 'package:study_work/target/target_names.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../widgets/indicator.dart';
@@ -49,7 +48,7 @@ class _StudySecondPageState extends State<StudySecondPage>
               color: primaryColor,
             ).marginOnly(right: 20),
             onTap: () {
-              Get.toNamed(TargetNames.studyAdd)?.then((_) {
+              Get.toNamed('/study_add')?.then((_) {
                 controller.getData();
               });
             },

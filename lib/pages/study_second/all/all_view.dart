@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:study_work/pages/study_second/second_item.dart';
 
 import '../../../db_study_work/study_entity.dart';
-import '../../../target/target_names.dart';
 import 'all_logic.dart';
 
 class AllPage extends StatefulWidget {
@@ -38,7 +37,7 @@ class _AllPageState extends State<AllPage> with AutomaticKeepAliveClientMixin {
                     },
                   ),
                   onTap: () {
-                    Get.toNamed(TargetNames.studyAdd, arguments: entity)
+                    Get.toNamed('/study_add', arguments: entity)
                         ?.then((_) async {
                       widget.list = await controller.getData();
                       controller.update();

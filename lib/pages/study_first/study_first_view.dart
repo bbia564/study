@@ -4,7 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:study_work/pages/study_first/first_item.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import '../../target/target_names.dart';
 import 'study_first_logic.dart';
 
 class StudyFirstPage extends StatefulWidget {
@@ -135,7 +134,7 @@ class _StudyFirstPageState extends State<StudyFirstPage> {
                                   },
                                 ),
                                 onTap: () {
-                                  Get.toNamed(TargetNames.studyAdd,
+                                  Get.toNamed('/study_add',
                                           arguments: entity)
                                       ?.then((_) {
                                     controller.getData();
@@ -194,7 +193,7 @@ class _StudyFirstPageState extends State<StudyFirstPage> {
                                   },
                                 ),
                                 onTap: () {
-                                  Get.toNamed(TargetNames.studyAdd,
+                                  Get.toNamed('/study_add',
                                           arguments: entity)
                                       ?.then((_) {
                                     controller.getData();

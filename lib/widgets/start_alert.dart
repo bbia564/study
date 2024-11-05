@@ -3,7 +3,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:study_work/main.dart';
-import 'package:study_work/target/target_names.dart';
 import 'package:study_work/widgets/study_text_field.dart';
 import 'package:styled_widget/styled_widget.dart';
 
@@ -126,7 +125,7 @@ class _StartAlertState extends State<StartAlert> {
             await prefs.setInt('indexSelected', indexSelected);
             await prefs.setString('name', name);
             if (firstAdd) {
-              Get.offAndToNamed(TargetNames.studyTab);
+              Get.offAndToNamed('/study_tab');
             } else {
               Get.back();
             }

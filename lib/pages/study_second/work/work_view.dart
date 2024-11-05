@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../db_study_work/study_entity.dart';
-import '../../../target/target_names.dart';
 import '../second_item.dart';
 import 'work_logic.dart';
 
@@ -38,7 +37,7 @@ class _WorkPageState extends State<WorkPage> with AutomaticKeepAliveClientMixin 
                 },
               ),
               onTap: () {
-                Get.toNamed(TargetNames.studyAdd, arguments: entity)
+                Get.toNamed('/study_add', arguments: entity)
                     ?.then((_) async {
                   widget.list = await controller.getData();
                   controller.update();

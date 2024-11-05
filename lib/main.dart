@@ -3,8 +3,18 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:study_work/db_study_work/db_study_work.dart';
-import 'package:study_work/target/target_names.dart';
-import 'package:study_work/target/target_pages.dart';
+import 'package:study_work/pages/study_add/study_add_binding.dart';
+import 'package:study_work/pages/study_add/study_add_view.dart';
+import 'package:study_work/pages/study_first/study_first_binding.dart';
+import 'package:study_work/pages/study_first/study_first_view.dart';
+import 'package:study_work/pages/study_second/study_second_binding.dart';
+import 'package:study_work/pages/study_second/study_second_view.dart';
+import 'package:study_work/pages/study_start/study_start_binding.dart';
+import 'package:study_work/pages/study_start/study_start_view.dart';
+import 'package:study_work/pages/study_tab/study_tab_binding.dart';
+import 'package:study_work/pages/study_tab/study_tab_view.dart';
+import 'package:study_work/pages/study_third/study_third_binding.dart';
+import 'package:study_work/pages/study_third/study_third_view.dart';
 
 Color primaryColor = const Color(0xff1f90e3);
 Color bgColor = const Color(0xfff7f7f7);
@@ -24,9 +34,9 @@ Future<String> getMainPage() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String? defaultName = prefs.getString('name');
   if (defaultName == null) {
-    return TargetNames.studyStart;
+    return '/study_start';
   } else {
-    return TargetNames.studyTab;
+    return '/study_tab';
   }
 }
 
@@ -44,7 +54,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({this.mainPage = TargetNames.studyStart, super.key});
+  const MyApp({this.mainPage = '/study_start', super.key});
 
   final String mainPage;
 
@@ -52,8 +62,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      getPages: TargetPages.list,
-      initialRoute: mainPage,
+      getPages: Lops,
+      initialRoute: '/study_start',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -104,3 +114,12 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+List<GetPage<dynamic>> Lops = [
+  GetPage(name: '/study_start', page: () => StudyStartPage(),binding: StudyStartBinding()),
+  GetPage(name: '/study_tab', page: () => StudyTabPage(),binding: StudyTabBinding()),
+  GetPage(name: '/study_first', page: () => const StudyFirstPage(),binding: StudyFirstBinding()),
+  GetPage(name: '/study_second', page: () => const StudySecondPage(),binding: StudySecondBinding()),
+  GetPage(name: '/study_third', page: () => StudyThirdPage(),binding: StudyThirdBinding()),
+  GetPage(name: '/study_add', page: () => StudyAddPage(),binding: StudyAddBinding()),
+];
