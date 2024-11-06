@@ -85,7 +85,7 @@ If you have any questions or concerns about our privacy policy, please contact u
       applicationName: info.appName,
       applicationVersion: info.version,
       applicationIcon: Image.asset(
-        'assets/launcher.webp',
+        'assets/logo52.png',
         width: 77,
         height: 77,
       ),

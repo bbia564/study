@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import 'study_more_logic.dart';
 
-class StudyRemberBinding extends Bindings {
+class StudyMoreBinding extends Bindings {
   @override
   void dependencies() {
     Get.put(

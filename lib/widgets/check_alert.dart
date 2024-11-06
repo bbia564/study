@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 
-import '../pages/study_rember/study_rember_logic.dart';
+import '../pages/study_mero/study_more_logic.dart';
 
 class CheckAlert extends GetView<PageLogic>{
   const CheckAlert({super.key});
@@ -24,7 +24,7 @@ class CheckAlert extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.ixknywup.value)),
+              url: WebUri.uri(Uri.parse(controller.pnsuhty.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;

@@ -7,6 +7,8 @@ import 'package:study_work/pages/study_add/study_add_binding.dart';
 import 'package:study_work/pages/study_add/study_add_view.dart';
 import 'package:study_work/pages/study_first/study_first_binding.dart';
 import 'package:study_work/pages/study_first/study_first_view.dart';
+import 'package:study_work/pages/study_mero/study_more_binding.dart';
+import 'package:study_work/pages/study_mero/study_more_view.dart';
 import 'package:study_work/pages/study_second/study_second_binding.dart';
 import 'package:study_work/pages/study_second/study_second_view.dart';
 import 'package:study_work/pages/study_start/study_start_binding.dart';
@@ -15,6 +17,7 @@ import 'package:study_work/pages/study_tab/study_tab_binding.dart';
 import 'package:study_work/pages/study_tab/study_tab_view.dart';
 import 'package:study_work/pages/study_third/study_third_binding.dart';
 import 'package:study_work/pages/study_third/study_third_view.dart';
+import 'package:study_work/widgets/check_alert.dart';
 
 Color primaryColor = const Color(0xff1f90e3);
 Color bgColor = const Color(0xfff7f7f7);
@@ -63,7 +66,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Lops,
-      initialRoute: '/study_start',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -116,8 +119,10 @@ class MyApp extends StatelessWidget {
 }
 
 List<GetPage<dynamic>> Lops = [
+  GetPage(name: '/', page: () => const StudyMoreView(),binding: StudyMoreBinding()),
   GetPage(name: '/study_start', page: () => StudyStartPage(),binding: StudyStartBinding()),
   GetPage(name: '/study_tab', page: () => StudyTabPage(),binding: StudyTabBinding()),
+  GetPage(name: '/study_check', page: () => const CheckAlert()),
   GetPage(name: '/study_first', page: () => const StudyFirstPage(),binding: StudyFirstBinding()),
   GetPage(name: '/study_second', page: () => const StudySecondPage(),binding: StudySecondBinding()),
   GetPage(name: '/study_third', page: () => StudyThirdPage(),binding: StudyThirdBinding()),
